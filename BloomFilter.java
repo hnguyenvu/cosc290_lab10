@@ -52,7 +52,28 @@ public class BloomFilter<E> {
     }
 
     public static void main(String[] args) {
-      
+      int k = 20;
+      int m = 1000000;
+      int n = 100000;
+      BloomFilter bloom = new BloomFilter(k, m);
+
+      for (int i = 0; i < n; i++) {
+        bloom.insert(i);
+      }
+
+      int count = 0;
+
+      for (int i = 0; i<n; i++) {
+        if (bloom.lookUp(n+i)) {
+          count++;
+        }
+      }
+
+      float rate = count/n;
+
+      System.out.println("False positive probability count: ", count);
+      System.out.println("False positive probability rate: ", rate);
+
         // complete the necessary experiment for 10.104 here; please write up your findings in markdown
     }
 
