@@ -69,10 +69,10 @@ public class BloomFilter<E> {
         }
       }
 
-      float rate = count/n;
+      float rate = (float)count/(float)n;
 
-      System.out.println("False positive probability count: ", count);
-      System.out.println("False positive probability rate: ", rate);
+      System.out.println("False positive probability count: " + count);
+      System.out.println("False positive probability rate: " + rate);
 
         // complete the necessary experiment for 10.104 here; please write up your findings in markdown
     }
